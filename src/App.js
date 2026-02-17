@@ -8,6 +8,8 @@ import Services from "./components/Services";
 import Careers from "./components/Careers";
 import Logo from "./components/Logo"; 
 import Footer from "./components/Footer"; 
+import WhatWeDo from "./components/WhatWeDo";
+
 import './App.css'; 
 import { useLocation } from "react-router-dom";
 
@@ -56,6 +58,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<Contact />} />
+              <Route path="/what-we-do" element={<WhatWeDo />} />
             <Route path="/industries" element={<Industries />} />
             <Route path="/services" element={<Services />} />
             <Route path="/careers" element={<Careers />} />

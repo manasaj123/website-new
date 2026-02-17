@@ -1,4 +1,35 @@
 /* Careers Component Specific Styles */
+.careers-heading-locations {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #f1f0ee; /* or any color you like */
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+  text-align: center; /* center below heading */
+}
+.careers-job-location strong {
+  text-decoration: none;
+}
+
+.careers-job-location {
+  text-decoration: underline;
+}
+
+.careers-heading-locations span {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.careers-heading-locations span:hover {
+  color: #9808f8c8;
+  text-decoration: underline;
+}
+
+
+
+
+
+
 .careers-container {
   min-height: 100vh;
   background: linear-gradient(to right, #581c87, #000000, #000000);
@@ -18,7 +49,7 @@
   font-size: 2.25rem;
   font-weight: 600;
   color: #fde047;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 

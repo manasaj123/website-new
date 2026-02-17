@@ -10,14 +10,9 @@ const loadGSAP = () => import("gsap").then((module) => module.gsap);
 const NAVIGATION_LINKS = [
   { to: "/", className: "navbar-link home-link", label: "Home" },
   {
-    to: "/industries",
+    to: "/what-we-do",
     className: "navbar-link industries-link",
-    label: "Industries",
-  },
-  {
-    to: "/services",
-    className: "navbar-link services-link",
-    label: "Services",
+    label: "What we do",
   },
   { to: "/careers", className: "navbar-link careers-link", label: "Careers" },
   { to: "/contact", className: "navbar-link contact-link", label: "Contact" },

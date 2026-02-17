@@ -1,0 +1,116 @@
+/* ---------- BODY ---------- */
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(to right, #581c87, #000000, #000000);
+  color: #f3f4f6;
+  font-family: sans-serif;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.what-container {
+  max-width: 1200px;
+  margin-top: 120px;
+  margin-left: 10px;
+  margin-right: 20px;
+  padding: 1rem ;
+}
+
+/* ---------- HEADINGS ---------- */
+
+.what-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- LEFT RIGHT LAYOUT ---------- */
+
+.what-layout {
+  display: flex;
+  gap: 30px;
+}
+
+/* ---------- LEFT & RIGHT SECTION ---------- */
+
+.left-section,
+.right-section {
+  flex: 1;
+}
+
+/* ---------- MAKE INDUSTRY & SERVICE TITLES 2 COLUMNS ---------- */
+
+.left-section,
+.right-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  row-gap: 1px;
+}
+
+/* ---------- KEEP HEADING FULL WIDTH ---------- */
+
+.what-heading {
+  grid-column: span 2;
+}
+
+/* ---------- INDUSTRY / SERVICE TITLES ---------- */
+
+.industry-title {
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: 0.3s;
+
+  
+}
+
+.industry-title:hover {
+  border: 1px solid #d8c6e9;
+  white-space: normal;
+}
+
+.industry-title.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ---------- SUB LIST ---------- */
+
+.sub-list {
+  grid-column: span 2;
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.sub-list li {
+  margin-bottom: 6px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* Tablet */
+@media (max-width: 900px) {
+
+  .what-layout {
+    flex-direction: column;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+
+  .left-section,
+  .right-section {
+    grid-template-columns: 1fr;
+  }
+
+  .what-heading {
+    grid-column: span 1;
+  }
+
+}

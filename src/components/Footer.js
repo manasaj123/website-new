@@ -129,12 +129,12 @@ const Footer = () => {
                 </a>
               </li>
               <li className="footer-section-list-item">
-                <a href="/industries" className="footer-section-link">
+                <a href="/what-we-do" className="footer-section-link">
                   Industries
                 </a>
               </li>
               <li className="footer-section-list-item">
-                <a href="/services" className="footer-section-link">
+                <a href="/what-we-do" className="footer-section-link">
                   Services
                 </a>
               </li>

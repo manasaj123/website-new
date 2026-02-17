@@ -25,7 +25,7 @@
 .services-heading {
   font-size: 2.25rem;
   font-weight: 600;
-  color: rgb(253, 224, 71);
+  color: white;
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -512,7 +512,7 @@
   --services-card-hover-bg: rgb(30, 41, 59);
   --services-text-primary: rgb(243, 244, 246);
   --services-text-secondary: rgb(229, 231, 235);
-  --services-accent-color: rgb(253, 224, 71);
+  --services-accent-color: rgb(229, 231, 235);
   --services-border-color: rgb(253, 224, 71);
   --services-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);

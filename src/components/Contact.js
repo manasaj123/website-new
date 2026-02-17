@@ -220,7 +220,10 @@ const Contact = () => {
       corporate: {
         title: "Corporate Office",
         icon: <FaBuilding className="contact-office-icon" />,
-        locations: ["Chittoor, Andhra Pradesh, India"],
+        locations: ["Chittoor, Andhra Pradesh, India",
+           "Wyoming, USA",
+    "London, UK"
+        ],
       },
       regional: {
         title: "Regional Offices",
