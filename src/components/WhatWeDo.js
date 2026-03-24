@@ -27,7 +27,7 @@ const INDUSTRIES = [
       "Fintech (Financial Technology)",
     ],
   },
-{
+  {
     title: "Healthcare and Pharmaceuticals",
     subItems: [
       "Hospitals and Clinics",
@@ -133,106 +133,74 @@ const INDUSTRIES = [
       "Stock Exchanges",
     ],
   },
-]; 
+];
 
 /* ---------------- SERVICES ---------------- */
 
 const SERVICES = [
   {
     title: "Custom Software Development",
-    subItems: [
-      "We provide tailor-made software solutions to meet your business needs.",
-    ],
+    subItems: ["We provide tailor-made software solutions to meet your business needs."],
   },
   {
     title: "Web & Mobile App Development",
-    subItems: [
-      "Our team specializes in building high-quality, scalable web and mobile apps.",
-    ],
+    subItems: ["Our team specializes in building high-quality, scalable web and mobile apps."],
   },
   {
     title: "Cloud Computing Services",
-    subItems: [
-      "We offer cloud solutions to help you scale your business and improve efficiency.",
-    ],
+    subItems: ["We offer cloud solutions to help you scale your business and improve efficiency."],
   },
   {
     title: "Cybersecurity Consulting",
-    subItems: [
-      "We help you safeguard your business with expert cybersecurity strategies.",
-    ],
+    subItems: ["We help you safeguard your business with expert cybersecurity strategies."],
   },
   {
     title: "AI & Machine Learning",
-    subItems: [
-      "Leverage the power of AI and machine learning to drive innovation in your business.",
-    ],
+    subItems: ["Leverage the power of AI and machine learning to drive innovation in your business."],
   },
   {
     title: "Database Management",
-    subItems: [
-      "We offer robust database solutions, ensuring data integrity and scalability.",
-    ],
+    subItems: ["We offer robust database solutions, ensuring data integrity and scalability."],
   },
   {
     title: "UI/UX Design",
-    subItems: [
-      "Our design team creates intuitive and visually appealing user interfaces.",
-    ],
+    subItems: ["Our design team creates intuitive and visually appealing user interfaces."],
   },
   {
     title: "Digital Analytics",
-    subItems: [
-      "We provide advanced analytics to help you make data-driven business decisions.",
-    ],
+    subItems: ["We provide advanced analytics to help you make data-driven business decisions."],
   },
   {
     title: "Enterprise Solutions",
-    subItems: [
-      "We help enterprises scale their operations with enterprise-grade software solutions.",
-    ],
+    subItems: ["We help enterprises scale their operations with enterprise-grade software solutions."],
   },
   {
     title: "DevOps Solutions",
-    subItems: [
-      "Streamline your development and operations with automated pipelines, continuous integration, and deployment strategies.",
-    ],
+    subItems: ["Streamline your development and operations with automated pipelines."],
   },
   {
     title: "Workday Implementation",
-    subItems: [
-      "Expert consulting and implementation of Workday HCM, Financial Management, and Analytics solutions.",
-    ],
+    subItems: ["Expert consulting and implementation of Workday solutions."],
   },
   {
     title: "Digital Marketing Services",
-    subItems: [
-      "Comprehensive digital marketing strategies to boost your online presence and drive business growth.",
-    ],
+    subItems: ["Comprehensive digital marketing strategies to boost your online presence."],
   },
   {
     title: "Generative AI Solutions",
-    subItems: [
-      "Cutting-edge AI solutions for content generation, image processing, and intelligent automation.",
-    ],
+    subItems: ["Cutting-edge AI solutions for intelligent automation."],
   },
   {
     title: "Snowflake Services",
-    subItems: [
-      "Data warehousing, analytics, and cloud data solutions using Snowflake's powerful platform.",
-    ],
+    subItems: ["Data warehousing and analytics using Snowflake platform."],
   },
   {
     title: "ERP & CRM Solutions",
-    subItems: [
-      "Integrated enterprise resource planning and customer relationship management systems for business efficiency.",
-    ],
+    subItems: ["Integrated ERP and CRM systems."],
   },
   {
     title: "Salesforce Solutions",
-    subItems: [
-      "Custom Salesforce implementation, integration, and optimization to maximize your CRM potential.",
-    ],
+    subItems: ["Custom Salesforce implementation and optimization."],
   },
 ];
 
@@ -243,7 +211,6 @@ const WhatWeDo = () => {
   const [selectedService, setSelectedService] = useState(null);
   const location = useLocation();
 
-  // Reset page when navbar clicked again
   useEffect(() => {
     setSelectedIndustry(null);
     setSelectedService(null);
@@ -253,13 +220,21 @@ const WhatWeDo = () => {
     <div className="what-container">
       <div className="what-layout">
 
-        {/* ---------- LEFT : INDUSTRIES ---------- */}
-
+        {/* ---------- INDUSTRIES ---------- */}
         {!selectedService && (
           <div className="left-section">
-            <h2 className="what-heading">Industries</h2>
             
-            
+            {/* ✅ CLICKABLE HEADING */}
+            <h2
+              className="what-heading clickable-heading"
+              onClick={() => {
+                setSelectedIndustry(null);
+                setSelectedService(null);
+              }}
+            >
+              Industries
+            </h2>
+
             {!selectedIndustry &&
               INDUSTRIES.map((industry) => (
                 <p
@@ -287,11 +262,20 @@ const WhatWeDo = () => {
           </div>
         )}
 
-        {/* ---------- RIGHT : SERVICES ---------- */}
-
+        {/* ---------- SERVICES ---------- */}
         {!selectedIndustry && (
           <div className="right-section">
-            <h2 className="what-heading">Services</h2>
+
+            {/* ✅ CLICKABLE HEADING */}
+            <h2
+              className="what-heading clickable-heading"
+              onClick={() => {
+                setSelectedIndustry(null);
+                setSelectedService(null);
+              }}
+            >
+              Services
+            </h2>
 
             {!selectedService &&
               SERVICES.map((service) => (

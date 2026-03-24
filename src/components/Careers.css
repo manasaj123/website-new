@@ -2,7 +2,7 @@
 .careers-heading-locations {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #f1f0ee; /* or any color you like */
+  color: #232220; /* or any color you like */
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
   text-align: center; /* center below heading */
@@ -32,23 +32,26 @@
 
 .careers-container {
   min-height: 100vh;
-  background: linear-gradient(to right, #581c87, #000000, #000000);
+  
+/*  background: linear-gradient(to right, #581c87, #000000, #000000); */
+ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
   color: #f3f4f6;
 }
 
 .careers-main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 7rem;
+  padding-top: 5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Careers Heading Styles */
 .careers-main-heading {
   font-size: 2.25rem;
   font-weight: 600;
-  color: #fde047;
+  color: #f8cf05;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -61,6 +64,7 @@
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
 }
 
 .careers-apply-title {

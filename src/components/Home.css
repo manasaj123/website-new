@@ -1,14 +1,16 @@
 /* Home Component Specific Styles */
 .home-container {
   min-height: 100vh;
-  background: linear-gradient(to right, #581c87, #000000, #000000);
-  color: #f3f4f6;
+  /* background: linear-gradient(to right, #581c87, #000000, #000000); */
+  background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
+  color: black;
 }
 
 /* Hero Section Styles */
 .home-hero-section {
   position: relative;
-  background: linear-gradient(to right, #581c87, #000000, #000000);
+  /*background: linear-gradient(to right, #581c87, #000000, #000000); */
+  background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
 }
 
 .home-hero-video {
@@ -19,6 +21,7 @@
   height: 100%;
   object-fit: cover;
   opacity: 0.7;
+  padding-top: 70px;
 }
 
 .home-hero-content {
@@ -31,6 +34,7 @@
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
+  
 }
 
 .home-hero-title {
@@ -45,6 +49,7 @@
 .home-hero-description {
   font-size: 1.125rem;
   margin-bottom: 1.5rem;
+  color: #fcf8f8;
 }
 
 .home-hero-button {
@@ -71,7 +76,8 @@
 .home-section {
   margin-top: 0;
   padding: 2rem 1.5rem;
-  background: linear-gradient(to right, #581c87, #000000, #000000);
+/*background: linear-gradient(to right, #581c87, #000000, #000000); */
+background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
   border-radius: 0.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
@@ -98,7 +104,7 @@
 
 .home-about-text {
   font-size: 1.125rem;
-  color: #e5e7eb;
+  color: #0f1012;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -202,14 +208,20 @@
 }
 
 .home-service-icon {
-  color: #fde047;
-  font-size: 3.75rem;
+  color: #fde047;           /* this is harmless for <img>, you can remove if you want */
+  font-size: 3.75rem;       /* not used by <img>, but ok */
   margin: 0 auto 1rem auto;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  display: block;
 }
 
 .home-service-text {
   font-size: 1.125rem;
-  color: #e5e7eb;
+  color: #101113;
 }
 
 /* Contact Section Styles */
@@ -226,7 +238,7 @@
 
 .home-contact-text {
   font-size: 1.125rem;
-  color: #e5e7eb;
+  color: #1a1b1c;
   margin-bottom: 1.5rem;
 }
 
@@ -351,3 +363,4 @@
 .home-icon {
   /* GSAP will handle animations */
 }
+

@@ -1,7 +1,7 @@
 /* Footer Component Specific Styles */
 .footer-container {
-  background-color: #000000;
-  color: white;
+  background-color: #f9f5f5;
+  color: rgb(14, 13, 13);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-size: 12px;
@@ -39,20 +39,31 @@
   align-items: center;
   justify-content: center;
   height: 4rem;
-  width: 10rem;
+  width: 6rem;
   text-align: center;
   font-weight: 700;
   font-family: "wild", sans-serif;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4px);
   text-decoration: none;
 }
 
+/* base logo image size (for mobile & default) */
+.logo-image {
+  height: 60px;      /* increased logo without changing container */
+  width: auto;
+  object-fit: contain;
+}
+
 @media (min-width: 640px) {
   .footer-logo-link {
-    height: 5rem;
-    width: 12rem;
+    height: 9rem;
+    width: 16rem;
+  }
+  .logo-image {
+    height: 120px;   /* bigger logo on small tablets */
+    width: auto;
+    object-fit: contain;
   }
 }
 
@@ -68,11 +79,15 @@
     height: 7rem;
     width: 16rem;
   }
+  .logo-image {
+    height: 170px;   /* bigger logo on desktop */
+    width: auto;
+  }
 }
 
 .footer-logo-text-primary {
-  color: rgb(245, 7, 7);
-  font-size: 0.75rem;
+  color: rgb(247, 1, 1);
+  font-size: 0.85rem;
 }
 
 @media (min-width: 640px) {
@@ -83,7 +98,7 @@
 
 @media (min-width: 768px) {
   .footer-logo-text-primary {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 }
 
@@ -130,7 +145,7 @@
 .footer-social-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #fde047;
+  color: #f4ce10;
   margin-bottom: 0.25rem;
 }
 
@@ -141,18 +156,18 @@
 }
 
 .footer-social-link {
-  color: white;
+  color: rgb(14, 13, 13);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-social-link:hover {
-  color: #fde047;
+  color: #ffdb27;
 }
 
 /* Divider */
 .footer-divider {
-  border-bottom: 1px solid #fde047;
+  border-bottom: 1px solid #f1cf21;
   margin-bottom: 0.75rem;
 }
 
@@ -161,7 +176,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  text-align: center;
+  text-align: ӯcenter;
   font-size: 0.875rem;
 }
 
@@ -174,7 +189,7 @@
 
 /* Company Description */
 .footer-company-description {
-  color: #9ca3af;
+  color: #111112;
   margin-bottom: 1rem;
   line-height: 1.6;
 }
@@ -183,7 +198,7 @@
 .footer-section-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #fde047;
+  color: #dab601;
   margin-bottom: 0.5rem;
 }
 
@@ -197,17 +212,18 @@
 }
 
 .footer-section-list-item {
-  color: #e5e7eb;
+  color: #080808;
+  font-weight: 200px;
 }
 
 .footer-section-link {
-  color: #e5e7eb;
+  color: #050505;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section-link:hover {
-  color: #fde047;
+  color: #f7d428;
 }
 
 /* Copyright Section */
@@ -215,7 +231,8 @@
   margin-top: 1.5rem;
   text-align: center;
   font-size: 0.75rem;
-  color: #9ca3af;
+  color: #000000;
+  font-weight: 200px;
 }
 
 /* Animation Classes for GSAP */
@@ -320,7 +337,7 @@
 
   .footer-social-link:hover,
   .footer-section-link:hover {
-    color: yellow;
+    color: rgb(220, 220, 2);
   }
 }
 

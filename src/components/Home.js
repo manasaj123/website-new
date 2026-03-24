@@ -40,6 +40,46 @@ const carouselImages = [
   },
 ];
 
+// Real images for Our Expertise (free stock; replace with your Cloudinary links later)
+const expertiseItems = [
+  {
+    title: "Cloud Computing & DevOps",
+    img: "/Screenshot (700).png",
+  },
+  {
+    title: "Web & Mobile App Development",
+    img: "/10354235_4428861.jpg",
+  },
+  {
+    title: "Custom Software Development",
+    img: "/1904.i402.013..Web%20development%20isometric%20concept%20composition.jpg",
+  },
+  {
+    title: "AI & ML",
+    img: "/Screenshot (703).png",
+  },
+  {
+    title: "Cybersecurity",
+    img: "/Screenshot (704).png",
+  },
+  {
+    title: "ERP & CRM",
+    img: "/Screenshot (706).png",
+  },
+  {
+    title: "Atlassian Solutions",
+    img: "/Screenshot (707).png",
+  },
+  {
+    title: "Digital Marketing",
+    img: "/Screenshot (708).png",
+  },
+  {
+    title: "Generative AI",
+    img: "/Screenshot (709).png",
+  },
+];
+
 // Loading component
 const LoadingSpinner = () => (
   <div className="home-loading-spinner">
@@ -100,7 +140,8 @@ const OptimizedImage = ({ src, fallback, alt, className, ...props }) => {
   );
 };
 
-// Lazy load icons component
+// KEEP IconsSection definition (not used now, but harmless)
+/* eslint-disable react/display-name */
 const IconsSection = lazy(() =>
   import("react-icons/fa").then((module) => ({
     default: () => {
@@ -167,7 +208,6 @@ const Home = () => {
 
   // Preload critical resources
   useEffect(() => {
-    // Preload hero video
     const videoLink = document.createElement("link");
     videoLink.rel = "preload";
     videoLink.as = "video";
@@ -175,7 +215,6 @@ const Home = () => {
       "https://res.cloudinary.com/dplqjwnoc/video/upload/v1737441680/95126-645704295_xactnk.mp4";
     document.head.appendChild(videoLink);
 
-    // Preload first carousel image
     const imageLink = document.createElement("link");
     imageLink.rel = "preload";
     imageLink.as = "image";
@@ -245,7 +284,6 @@ const Home = () => {
       gsap.registerPlugin(ScrollTrigger);
       setGsapLoaded(true);
 
-      // Initialize animations
       initializeAnimations(gsap, ScrollTrigger);
     } catch (error) {
       console.error("Failed to load GSAP:", error);
@@ -262,7 +300,6 @@ const Home = () => {
   };
 
   const initializeAnimations = (gsap, ScrollTrigger) => {
-    // Hero Section Animations
     gsap.fromTo(
       ".home-header-text",
       { opacity: 0, y: -50 },
@@ -285,7 +322,6 @@ const Home = () => {
       }
     );
 
-    // Scroll Animations for Sections
     gsap.utils.toArray(".home-fade-in").forEach((section) => {
       gsap.fromTo(
         section,
@@ -303,7 +339,6 @@ const Home = () => {
       );
     });
 
-    // Animations for Icons with more effects
     gsap.utils.toArray(".home-icon").forEach((icon, index) => {
       gsap.fromTo(
         icon,
@@ -329,7 +364,7 @@ const Home = () => {
   useEffect(() => {
     const carouselInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
-    }, 4000); // Increased to 4 seconds to reduce CPU usage
+    }, 4000);
 
     return () => clearInterval(carouselInterval);
   }, []);
@@ -373,7 +408,6 @@ const Home = () => {
   return (
     <div className="home-container">
       <Helmet>
-        {/* Critical CSS inline */}
         <style type="text/css">{`
           .home-hero-section { min-height: 100vh; position: relative; }
           .home-hero-video { width: 100%; height: 100%; object-fit: cover; }
@@ -383,11 +417,9 @@ const Home = () => {
           .home-image-loading { opacity: 0; transition: opacity 0.3s; }
           .home-image-loaded { opacity: 1; }
           .home-about-image { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-                    .home-about-image { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
           .home-about-image-container { display: flex; justify-content: center; align-items: center; }
         `}</style>
 
-        {/* Basic Meta Tags */}
         <title>DB4Cloud Technologies- Digital & Cloud Solutions</title>
         <meta
           name="description"
@@ -400,7 +432,6 @@ const Home = () => {
         <meta name="author" content="DB4Cloud" />
         <link rel="canonical" href="https://db4cloud.in" />
 
-        {/* Preload critical resources */}
         <link
           rel="preload"
           href="https://res.cloudinary.com/dplqjwnoc/video/upload/v1737441680/95126-645704295_xactnk.mp4"
@@ -409,7 +440,6 @@ const Home = () => {
         />
         <link rel="preload" href={carouselImages[0].src} as="image" />
 
-        {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//res.cloudinary.com" />
         <link
           rel="preconnect"
@@ -417,7 +447,6 @@ const Home = () => {
           crossOrigin="anonymous"
         />
 
-        {/* Open Graph Meta Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="DB4Cloud Technologies" />
         <meta
@@ -434,7 +463,6 @@ const Home = () => {
           content="https://db4cloud.in/images/home-banner.jpg"
         />
 
-        {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@DB4Cloud" />
         <meta
@@ -450,14 +478,12 @@ const Home = () => {
           content="https://db4cloud.in/images/home-banner.jpg"
         />
 
-        {/* Additional Meta Tags */}
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="language" content="English" />
         <meta name="revisit-after" content="7 days" />
         <meta name="generator" content="React" />
 
-        {/* Schema.org Organization and WebSite Structured Data */}
         <script type="application/ld+json">
           {`
             {
@@ -545,7 +571,6 @@ const Home = () => {
       {/* About Us Section */}
       <section className="home-section home-fade-in">
         <div className="home-about-section">
-          {/* Left side content */}
           <div className="home-about-content">
             <MotionH2
               className="home-about-title"
@@ -584,7 +609,6 @@ const Home = () => {
             </MotionP>
           </div>
 
-          {/* Right side image - Fixed */}
           <MotionComponent
             className="home-about-image-container"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -598,7 +622,6 @@ const Home = () => {
               loading="lazy"
               onError={(e) => {
                 console.error("Image failed to load:", e.target.src);
-                // Fallback to a placeholder or alternative image
                 e.target.src =
                   "https://via.placeholder.com/600x400/4CAF50/white?text=DB4Cloud+Technologies";
               }}
@@ -649,13 +672,26 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Expertise Section */}
+      {/* Our Expertise Section – using images */}
       <section className="home-section home-fade-in home-expertise-section">
         <h2 className="home-expertise-title">Our Expertise</h2>
         <div className="home-expertise-grid">
-          <Suspense fallback={<LoadingSpinner />}>
-            <IconsSection />
-          </Suspense>
+          {expertiseItems.map((item, index) => (
+            <div className="home-service-item" key={index}>
+              <img
+                src={item.img}
+                alt={item.title}
+                className="home-service-icon home-icon"
+                loading="lazy"
+                onError={(e) => {
+                  console.log("Error loading:", e.target.src);
+                  e.target.src =
+                    "https://via.placeholder.com/150x150/1f2937/ffffff?text=DB4Cloud";
+                }}
+              />
+              <p className="home-service-text">{item.title}</p>
+            </div>
+          ))}
         </div>
       </section>
 

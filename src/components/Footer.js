@@ -130,14 +130,10 @@ const Footer = () => {
               </li>
               <li className="footer-section-list-item">
                 <a href="/what-we-do" className="footer-section-link">
-                  Industries
+                  What We Do
                 </a>
               </li>
-              <li className="footer-section-list-item">
-                <a href="/what-we-do" className="footer-section-link">
-                  Services
-                </a>
-              </li>
+              
               <li className="footer-section-list-item">
                 <a href="/careers" className="footer-section-link">
                   Careers

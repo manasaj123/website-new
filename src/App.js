@@ -52,7 +52,7 @@ const App = () => {
       <FacebookPixelTracker />
       <div className="App">
         {/* Add the logo outside the Navbar */}
-         <Logo />
+         
         <Navbar />
         <div className="App-content">
           <Routes>
@@ -74,4 +74,3 @@ const App = () => {
 };
  
 export default App;
-

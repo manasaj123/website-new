@@ -5,14 +5,15 @@
   align-items: center;
   justify-content: center;
   min-height: 80vh;
-  background: linear-gradient(to right, #581c87, #000000, #000000);
+  /* background: linear-gradient(to right, #581c87, #000000, #000000); */
+background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
   color: #f3f4f6;
 }
 
 .contact-main-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 6rem;
+  padding-top: 5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -21,7 +22,7 @@
 .contact-main-heading {
   font-size: 2.25rem;
   font-weight: 700;
-  color: #fde047;
+  color: #efc806;
   margin-bottom: 2rem;
   text-align: center;
 }
