@@ -1,9 +1,16 @@
-import React, { useEffect, useState, lazy, Suspense } from "react";
+import React, { useEffect, useState, lazy } from "react";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./Home.css";
-
-// Import the stock image directly
+import img700 from "../assets/Screenshot (700).png";
+import img703 from "../assets/Screenshot (703).png";
+import img704 from "../assets/Screenshot (704).png";
+import img706 from "../assets/Screenshot (706).png";
+import img707 from "../assets/Screenshot (707).png";
+import img708 from "../assets/Screenshot (708).png";
+import img709 from "../assets/Screenshot (709).png";
+import imgWeb from "../assets/1904.i402.013..Web development isometric concept composition.jpg";
+import imgCloud from "../assets/10354235_4428861.jpg";
 import stockImage from "../assets/stock1.jpg";
 
 // Optimized image URLs with compression and WebP format
@@ -38,45 +45,51 @@ const carouselImages = [
     fallback:
       "https://res.cloudinary.com/dplqjwnoc/image/upload/c_scale,w_800,q_auto/v1737437063/startup-594090_l2km65.jpg",
   },
+  {
+    src: "https://media.istockphoto.com/id/1172641653/photo/qa-quality-assurance-and-quality-control-concept.jpg?s=612x612&w=0&k=20&c=eNoaqagG6QKduYVNj-HzxBntsgceP8SurCE1QPpzQjQ=",
+    header: "Team Excellence",
+    fallback:
+      "https://res.cloudinary.com/dplqjwnoc/image/upload/c_scale,w_800,q_auto/v1737438000/teamwork-sample_journey.jpg",
+  },
 ];
 
-// Real images for Our Expertise (free stock; replace with your Cloudinary links later)
+// Real images for Our Expertise
 const expertiseItems = [
   {
     title: "Cloud Computing & DevOps",
-    img: "/Screenshot (700).png",
+    img: img700,
   },
   {
     title: "Web & Mobile App Development",
-    img: "/10354235_4428861.jpg",
+    img: imgCloud,
   },
   {
     title: "Custom Software Development",
-    img: "/1904.i402.013..Web%20development%20isometric%20concept%20composition.jpg",
+    img: imgWeb,
   },
   {
     title: "AI & ML",
-    img: "/Screenshot (703).png",
+    img: img703,
   },
   {
     title: "Cybersecurity",
-    img: "/Screenshot (704).png",
+    img: img704,
   },
   {
     title: "ERP & CRM",
-    img: "/Screenshot (706).png",
+    img: img706,
   },
   {
     title: "Atlassian Solutions",
-    img: "/Screenshot (707).png",
+    img: img707,
   },
   {
     title: "Digital Marketing",
-    img: "/Screenshot (708).png",
+    img: img708,
   },
   {
     title: "Generative AI",
-    img: "/Screenshot (709).png",
+    img: img709,
   },
 ];
 
@@ -104,7 +117,6 @@ const OptimizedImage = ({ src, fallback, alt, className, ...props }) => {
     setIsLoaded(true);
   };
 
-  // If we have a fallback, use picture element, otherwise use regular img
   if (fallback && fallback !== src) {
     return (
       <picture>
@@ -124,7 +136,6 @@ const OptimizedImage = ({ src, fallback, alt, className, ...props }) => {
     );
   }
 
-  // For local images or single source images
   return (
     <img
       src={imageSrc}
@@ -140,7 +151,7 @@ const OptimizedImage = ({ src, fallback, alt, className, ...props }) => {
   );
 };
 
-// KEEP IconsSection definition (not used now, but harmless)
+// KEEP IconsSection definition
 /* eslint-disable react/display-name */
 const IconsSection = lazy(() =>
   import("react-icons/fa").then((module) => ({
@@ -360,10 +371,10 @@ const Home = () => {
     });
   };
 
-  // Optimized carousel with reduced frequency
+  // Optimized carousel, 2 images per slide
   useEffect(() => {
     const carouselInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+      setCurrentSlide((prev) => (prev + 1) % Math.ceil(carouselImages.length / 2));
     }, 4000);
 
     return () => clearInterval(carouselInterval);
@@ -377,12 +388,11 @@ const Home = () => {
     navigate("/contact");
   };
 
-  // Dynamic motion component
+  // Dynamic motion components
   const MotionComponent = ({ children, ...props }) => {
     if (!motionLoaded) {
       return <div {...props}>{children}</div>;
     }
-
     const { motion } = require("framer-motion");
     return React.createElement(motion.div, props, children);
   };
@@ -391,7 +401,6 @@ const Home = () => {
     if (!motionLoaded) {
       return <h2 className={props.className}>{children}</h2>;
     }
-
     const { motion } = require("framer-motion");
     return React.createElement(motion.h2, props, children);
   };
@@ -400,10 +409,14 @@ const Home = () => {
     if (!motionLoaded) {
       return <p className={props.className}>{children}</p>;
     }
-
     const { motion } = require("framer-motion");
     return React.createElement(motion.p, props, children);
   };
+
+  // 2 images per slide
+  const totalSlides = Math.ceil(carouselImages.length / 2);
+  const startIndex = currentSlide * 2;
+  const visibleImages = carouselImages.slice(startIndex, startIndex + 2);
 
   return (
     <div className="home-container">
@@ -625,9 +638,6 @@ const Home = () => {
                 e.target.src =
                   "https://via.placeholder.com/600x400/4CAF50/white?text=DB4Cloud+Technologies";
               }}
-              onLoad={() => {
-                console.log("About Us image loaded successfully");
-              }}
             />
           </MotionComponent>
         </div>
@@ -645,34 +655,34 @@ const Home = () => {
         </MotionH2>
 
         <div className="home-carousel-container">
-          {carouselImages.map((image, index) => (
-            <MotionComponent
-              key={index}
-              className={`home-carousel-slide ${
-                index === currentSlide ? "active" : "inactive"
-              }`}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: index === currentSlide ? 1 : 0,
-                scale: index === currentSlide ? 1 : 0.9,
-              }}
-              transition={{ duration: 1 }}
-            >
-              <OptimizedImage
-                src={image.src}
-                fallback={image.fallback}
-                alt={image.header}
-                className="home-carousel-image"
-              />
-              <div className="home-carousel-caption">
-                <h3 className="home-carousel-caption-title">{image.header}</h3>
-              </div>
-            </MotionComponent>
-          ))}
+          <MotionComponent
+            className="home-carousel-slide active"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <div className="home-carousel-grid">
+              {visibleImages.map((image, index) => (
+                <div className="home-carousel-item" key={index}>
+                  <OptimizedImage
+                    src={image.src}
+                    fallback={image.fallback}
+                    alt={image.header}
+                    className="home-carousel-image"
+                  />
+                  <div className="home-carousel-caption">
+                    <h3 className="home-carousel-caption-title">
+                      {image.header}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </MotionComponent>
         </div>
       </section>
 
-      {/* Our Expertise Section – using images */}
+      {/* Our Expertise Section */}
       <section className="home-section home-fade-in home-expertise-section">
         <h2 className="home-expertise-title">Our Expertise</h2>
         <div className="home-expertise-grid">
@@ -684,7 +694,6 @@ const Home = () => {
                 className="home-service-icon home-icon"
                 loading="lazy"
                 onError={(e) => {
-                  console.log("Error loading:", e.target.src);
                   e.target.src =
                     "https://via.placeholder.com/150x150/1f2937/ffffff?text=DB4Cloud";
                 }}

@@ -1,16 +1,14 @@
 /* Home Component Specific Styles */
 .home-container {
   min-height: 100vh;
-  /* background: linear-gradient(to right, #581c87, #000000, #000000); */
-  background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
+  background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
   color: black;
 }
 
 /* Hero Section Styles */
 .home-hero-section {
   position: relative;
-  /*background: linear-gradient(to right, #581c87, #000000, #000000); */
-  background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
+  background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
 }
 
 .home-hero-video {
@@ -31,11 +29,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100vh; /* reduced so Our Expertise is visible sooner */
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  
 }
+
 
 .home-hero-title {
   font-size: 3rem;
@@ -76,8 +74,7 @@
 .home-section {
   margin-top: 0;
   padding: 2rem 1.5rem;
-/*background: linear-gradient(to right, #581c87, #000000, #000000); */
-background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3); 
+  background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
   border-radius: 0.5rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
@@ -125,41 +122,45 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
 /* Carousel Styles */
 .home-carousel-section {
   overflow: hidden;
+  padding-top: 4.6rem;
 }
 
 .home-carousel-title {
   font-size: 2.25rem;
   font-weight: 600;
   color: #fbbf24;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   text-align: center;
 }
 
+/* Smaller height; 2 images per slide */
 .home-carousel-container {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 380px; /* small so Expertise shows without scroll */
   overflow: hidden;
   border-radius: 0.5rem;
-  margin: 0 auto;
+  margin: 0 auto 0.5rem auto;
   max-width: 112rem;
 }
 
 .home-carousel-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  transition: opacity 1000ms ease-in-out;
 }
 
-.home-carousel-slide.active {
-  opacity: 1;
+.home-carousel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  height: 100%;
 }
 
-.home-carousel-slide.inactive {
-  opacity: 0;
+.home-carousel-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .home-carousel-image {
@@ -177,30 +178,35 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .home-carousel-caption-title {
-  font-size: 1.125rem;
+  font-size: 0.9rem;
   font-weight: bold;
 }
 
 /* Expertise Section Styles */
 .home-expertise-section {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding-top: 3.2rem;   /* slightly tighter */
+  padding-bottom: 1.5rem;
 }
 
 .home-expertise-title {
   font-size: 2.25rem;
   font-weight: 600;
   color: #fbbf24;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
+/* more compact grid */
 .home-expertise-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+  align-items: flex-start;
 }
 
 .home-service-item {
@@ -208,11 +214,11 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
 }
 
 .home-service-icon {
-  color: #fde047;           /* this is harmless for <img>, you can remove if you want */
-  font-size: 3.75rem;       /* not used by <img>, but ok */
-  margin: 0 auto 1rem auto;
-  width: 6rem;
-  height: 6rem;
+  color: #fde047;
+  font-size: 3.75rem;
+  margin: 0 auto 0.75rem auto;
+  width: 5rem;          /* smaller circles */
+  height: 5rem;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
@@ -220,7 +226,7 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
 }
 
 .home-service-text {
-  font-size: 1.125rem;
+  font-size: 1.05rem;
   color: #101113;
 }
 
@@ -299,7 +305,7 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
   }
 
   .home-carousel-container {
-    height: 500px;
+    height: 420px;
   }
 
   .home-carousel-title {
@@ -307,13 +313,13 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
   }
 
   .home-carousel-caption-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 1024px) {
   .home-carousel-container {
-    height: 700px;
+    height: 460px;
   }
 
   .home-carousel-title {
@@ -321,11 +327,11 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
   }
 
   .home-carousel-caption {
-    padding: 1rem;
+    padding: 0.4rem 0.6rem;
   }
 
   .home-carousel-caption-title {
-    font-size: 1.5rem;
+    font-size: 1.05rem;
   }
 }
 
@@ -339,11 +345,15 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
   }
 
   .home-carousel-caption {
-    padding: 0.5rem;
+    padding: 0.25rem;
   }
 
   .home-carousel-caption-title {
-    font-size: 1.125rem;
+    font-size: 0.85rem;
+  }
+
+  .home-expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -363,4 +373,3 @@ background: linear-gradient(to right, #f8f3e2, #f8f3e5, #fcf5e3);
 .home-icon {
   /* GSAP will handle animations */
 }
-
